@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
+from signal import pause
 import mraa
 import toml
 from pythonosc import udp_client
@@ -51,3 +52,5 @@ if __name__ == '__main__':
     init_config()
     client = udp_client.SimpleUDPClient(IP, OUT_PORT)
     buttons = [Button(but['PIN']) for but in BUTTONS]
+
+    pause()
