@@ -34,8 +34,8 @@ def debug(txt):
 
 
 def button_isr_routine(gpio):
-    debug(f"button value {gpio.read()}")
-
+    #debug(f"button value {gpio.read()}")
+    print("ciao")
 
 class Button:
     def __init__(self, pin=None):
@@ -44,13 +44,15 @@ class Button:
     def __config(self, pin):
         button = mraa.Gpio(pin)
         button.dir(mraa.DIR_IN)
-        button.mode(mraa.MODE_PULLDOWN)
-        button.isr(mraa.EDGE_BOTH, button_isr_routine, button)
+        #button.mode(mraa.MODE_PULLDOWN)
+        button.isr(mraa.EDGE_BOTH, print, 10)
 
+    @staticmethod
+    def isr_routine(gpio):
+        print(gpio)
 
 if __name__ == '__main__':
     init_config()
-    client = udp_client.SimpleUDPClient(IP, OUT_PORT)
-    buttons = [Button(but['PIN']) for but in BUTTONS]
-
-    pause()
+    #client = udp_client.SimpleUDPClient(IP, OUT_PORT)
+    #buttons = [Button(but['PIN']) for but in BUTTONS]
+    button = Button(19)
