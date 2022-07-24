@@ -48,4 +48,6 @@ class Button:
 
 
 if __name__ == '__main__':
+    init_config()
     client = udp_client.SimpleUDPClient(IP, OUT_PORT)
+    buttons = [Button(but['PIN']) for but in BUTTONS]
