@@ -17,6 +17,17 @@ OUT_PORT = 7000
         PINS = [23, 24]
         ADDRESS = "/rotary_2"
 
+[buttons]
+    [buttons.b0]
+        PIN = 21
+        ADDRESS = "/button_0"
+    [buttons.b1]
+        PIN = 22
+        ADDRESS = "/button_1"
+    [buttons.b2]
+        PIN = 19
+        ADDRESS = "/button_2"
+
 [i2c]
 CLK = 13
 DIO = 11
