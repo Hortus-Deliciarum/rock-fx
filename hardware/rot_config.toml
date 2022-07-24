@@ -1,0 +1,22 @@
+[debug]
+DEBUG = 1
+
+[network]
+IP = '127.0.0.1'
+IN_PORT = 8000
+OUT_PORT = 7000
+
+[encoders]
+    [encoders.e0]
+        PINS = [3, 5]
+        ADDRESS = "/rotary_0"
+    [encoders.e1]
+        PINS = [8, 10]
+        ADDRESS = "/rotary_1"
+    [encoders.e2]
+        PINS = [23, 24]
+        ADDRESS = "/rotary_2"
+
+[i2c]
+CLK = 13
+DIO = 11
