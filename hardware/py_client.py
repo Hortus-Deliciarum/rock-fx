@@ -13,6 +13,7 @@ IP = None
 OUT_PORT = None
 MAINPATH = Path(__file__).parent.absolute()
 CONFIG_PATH = MAINPATH / Path('rot_config.toml')
+ENCODERS = None
 
 
 def init_config():
@@ -25,7 +26,7 @@ def init_config():
     IP = data['network']['IP']
     OUT_PORT = data['network']['OUT_PORT']
     ENCODERS = [data['encoders'][enc] for enc in data['encoders']]
-    print(DEBUG, IP,type(IP), OUT_PORT, type(OUT_PORT), ENCODERS)
+    print(DEBUG, IP, type(IP), OUT_PORT, type(OUT_PORT), ENCODERS)
 
 
 def debug(txt):
