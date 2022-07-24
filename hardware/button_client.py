@@ -15,7 +15,7 @@ CONFIG_PATH = MAINPATH / Path('rot_config.toml')
 
 
 def init_config():
-    global IP, OUT_PORT, ENCODERS
+    global IP, OUT_PORT, BUTTONS, DEBUG
 
     with open(CONFIG_PATH, 'r') as f:
         data = toml.load(f)
