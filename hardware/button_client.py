@@ -13,7 +13,12 @@ OUT_PORT = None
 BUTTONS = None
 MAINPATH = Path(__file__).parent.absolute()
 CONFIG_PATH = MAINPATH / Path('rot_config.toml')
+PRESSED = 0
+RELEASED = 1
 
+class Antani:
+    def __init__(self):
+        pass
 
 def init_config():
     global IP, OUT_PORT, BUTTONS, DEBUG
@@ -35,31 +40,19 @@ def debug(txt):
 
 def button_isr_routine(gpio):
     #debug(f"button value {gpio.read()}")
-    print("ciao")
-
-
-"""
-class Button:
-    def __init__(self, pin=None):
-        self.__config(pin)
-
-    def __config(self, pin):
-        button = mraa.Gpio(pin)
-        button.dir(mraa.DIR_IN)
-        #button.mode(mraa.MODE_PULLDOWN)
-        button.isr(mraa.EDGE_BOTH, print, 10)
-
-    @staticmethod
-    def isr_routine(gpio):
-        print(gpio)
-"""
-
+    """
+    if gpio.read() == PRESSED:
+        print("PRESSED")
+    else:
+        print("RELEASED")
+    """
+    print(gpio)
 
 def button_config(pin):
     button = mraa.Gpio(pin)
     button.dir(mraa.DIR_IN)
-    # button.mode(mraa.MODE_PULLDOWN)
-    button.isr(mraa.EDGE_BOTH, button_isr_routine, button)
+    #button.mode(mraa.MODE_PULLUP)
+    button.isr(mraa.EDGE_BOTH, button_isr_routine, (button,1))
     return button
 
 
