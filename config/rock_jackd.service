@@ -1,6 +1,7 @@
 [Unit]
 Description=jackd service
 StartLimitIntervalSec=0
+Before=rock_puredata.service
 
 [Service]
 Type=oneshot
