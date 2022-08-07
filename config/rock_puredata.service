@@ -8,6 +8,7 @@ Type=oneshot
 #Restart=always
 #RestartSec=1
 User=root
+ExecStartPre=/bin/sleep 10
 ExecStart=/home/rock/.puredata
 Type=idle
 
