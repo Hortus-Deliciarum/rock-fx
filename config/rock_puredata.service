@@ -1,7 +1,7 @@
 [Unit]
 Description=puredata service
 StartLimitIntervalSec=0
-After=rock_jackd.service
+Requires=rock_jackd.service
 
 [Service]
 Type=oneshot

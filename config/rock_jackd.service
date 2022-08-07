@@ -1,7 +1,6 @@
 [Unit]
 Description=jackd service
 StartLimitIntervalSec=0
-Before=rock_puredata.service
 
 [Service]
 Type=oneshot
@@ -11,9 +10,6 @@ LimitRTPRIO=infinity
 LimitMEMLOCK=infinity
 LimitRTTIME=infinity
 User=rock
-#WorkingDirectory=~/Documents/leminrock/
-#Environment="JACK_NO_AUDIO_RESERVATION=1"
-#ExecStart=/usr/bin/jackd -R -P 95 -d alsa -d hw:1 -r 44100 -p 256
 ExecStart=/home/rock/.jackdrc
 Type=idle
 
