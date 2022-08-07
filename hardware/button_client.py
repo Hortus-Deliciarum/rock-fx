@@ -52,7 +52,7 @@ def button_config(pin):
     button = mraa.Gpio(pin)
     button.dir(mraa.DIR_IN)
     #button.mode(mraa.MODE_PULLUP)
-    button.isr(mraa.EDGE_BOTH, button_isr_routine, (button,1))
+    button.isr(mraa.EDGE_BOTH, button_isr_routine, button)
     return button
 
 
