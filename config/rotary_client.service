@@ -4,7 +4,7 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=oneshot
-User=rock
+User=root
 ExecStart=/home/rock/Documents/Hortus-Deliciarum/rock-fx/hardware/py_client.py
 Type=idle
 

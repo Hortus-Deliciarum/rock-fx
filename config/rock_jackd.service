@@ -9,7 +9,7 @@ Type=oneshot
 LimitRTPRIO=infinity
 LimitMEMLOCK=infinity
 LimitRTTIME=infinity
-User=rock
+User=root
 ExecStart=/home/rock/.jackdrc
 Type=idle
 

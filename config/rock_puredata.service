@@ -7,8 +7,7 @@ Requires=rock_jackd.service
 Type=oneshot
 #Restart=always
 #RestartSec=1
-User=rock
-#WorkingDirectory=~/Documents/leminrock/
+User=root
 ExecStart=/home/rock/.puredata
 Type=idle
 
