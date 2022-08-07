@@ -7,6 +7,9 @@ Before=rock_puredata.service
 Type=oneshot
 #Restart=always
 #RestartSec=1
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+LimitRTTIME=infinity
 User=rock
 #WorkingDirectory=~/Documents/leminrock/
 #Environment="JACK_NO_AUDIO_RESERVATION=1"
