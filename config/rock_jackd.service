@@ -6,7 +6,7 @@ StartLimitIntervalSec=0
 Type=oneshot
 #Restart=always
 #RestartSec=1
-User=root
+User=rock
 #WorkingDirectory=~/Documents/leminrock/
 #Environment="JACK_NO_AUDIO_RESERVATION=1"
 #ExecStart=/usr/bin/jackd -R -P 95 -d alsa -d hw:1 -r 44100 -p 256

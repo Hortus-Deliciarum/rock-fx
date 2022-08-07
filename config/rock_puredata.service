@@ -1,13 +1,13 @@
 [Unit]
 Description=puredata service
 StartLimitIntervalSec=0
-Requires=rock_jackd.service
+After=rock_jackd.service
 
 [Service]
 Type=oneshot
 #Restart=always
 #RestartSec=1
-User=root
+User=rock
 #WorkingDirectory=~/Documents/leminrock/
 ExecStart=/home/rock/.puredata
 Type=idle
