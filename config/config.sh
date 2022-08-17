@@ -1,24 +1,32 @@
 #!/usr/bin/env bash
 
+DIR_SYSTEMD="/etc/systemd/system"
+DIR_HOMEROCK="/home/rock"
+COPY_SERVICES=( "rotary_client.service" "rotary_server.service" "rock_jackd.service" "rock_puredata.service" )
+COPY_FILES=( ".jackdrc" ".puredata" )
+SERVICES=( "rotary_client" "rotary_server" "rock_jackd" "rock_puredata")
+
 echo
 echo "COPYING FILES..."
-cp rotary_client.service /etc/systemd/system/.
-cp rotary_server.service /etc/systemd/system/.
-cp rock_jackd.service /etc/systemd/system/.
-cp rock_puredata.service /etc/systemd/system/.
-cp -rv .jackdrc /home/rock/.
-cp -rv .puredata /home/rock/.
+
+for service in ${COPY_SERVICES[@]}; do
+    echo -e "\tcopying $service in $DIR_SYSTEMD"
+    cp $service $DIR_SYSTEMD
+done
+
+for file in ${COPY_FILES[@]}; do
+    echo -e "\tcopying $file in $DIR_HOMEROCK"
+    cp -rv $file $DIR_HOMEROCK
+done
 
 echo
 echo "STARTING & ENABLING SERVICES"
-systemctl start rotary_client
-systemctl start rotary_server
-systemctl start rock_jackd
-systemctl start rock_puredata
-systemctl enable rotary_client
-systemctl enable rotary_server
-systemctl enable rock_jackd
-systemctl enable rock_puredata
+
+for service in ${SERVICES[@]}; do
+    echo -e "starting/enabling $service"
+    systemctl start $service
+    systemctl enable $service
+done
 
 echo
 echo "RUNNING daemon-reload..."
