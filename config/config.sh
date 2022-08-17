@@ -12,7 +12,12 @@ DIR_HOMEROCK="/home/rock"
 COPY_SERVICES=( "rotary_client.service" "rotary_server.service" "rock_jackd.service" "rock_puredata.service" )
 COPY_FILES=( ".jackdrc" ".puredata" )
 SERVICES=( "rotary_client" "rotary_server" "rock_jackd" "rock_puredata")
-figlet -c "Lem in Rock"
+
+clear
+echo
+figlet -ck -f pagga "Lem in Rock"
+figlet -ck -f future configuration
+sleep 2
 echo
 echo "=== COPYING SERVICES AND FILES... ==="
 sleep 1
@@ -35,8 +40,8 @@ sleep 1
 
 for service in ${SERVICES[@]}; do
     echo -e "${GREEN} \tstarting/enabling $service"
-    systemctl start $service
-    systemctl enable $service
+    systemctl start $service > /dev/null 2>&1
+    systemctl enable $service > /dev/null 2>&1
 done
 
 echo -e "${NC}"
