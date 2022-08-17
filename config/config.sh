@@ -15,6 +15,7 @@ SERVICES=( "rotary_client" "rotary_server" "rock_jackd" "rock_puredata")
 
 echo
 echo "=== COPYING SERVICES AND FILES... ==="
+sleep 1
 
 for service in ${COPY_SERVICES[@]}; do
     echo -e "${GREEN}\tcopying $service in $DIR_SYSTEMD"
@@ -23,13 +24,14 @@ done
 
 for file in ${COPY_FILES[@]}; do
     echo -e "\tcopying $file in $DIR_HOMEROCK"
-    cp -rv $file $DIR_HOMEROCK
+    cp $file $DIR_HOMEROCK
 done
 
 echo -e "${NC}"
 
 echo
 echo "=== STARTING & ENABLING SERVICES ==="
+sleep 1
 
 for service in ${SERVICES[@]}; do
     echo -e "${GREEN} \tstarting/enabling $service"
@@ -37,8 +39,11 @@ for service in ${SERVICES[@]}; do
     systemctl enable $service
 done
 
+echo -e "${NC}"
 echo
 echo "=== RUNNING daemon-reload... ==="
+sleep 1
+
 systemctl daemon-reload
 
 echo
