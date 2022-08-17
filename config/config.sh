@@ -20,8 +20,10 @@ length=${#FILES[@]}
 counter=1
 
 set_patch() {
+    echo "#!/usr/bin/env bash"
+    echo "puredata -nogui -jack $1"
     echo "#!/usr/bin/env bash" > $DIR_HOMEROCK/$PUREDATA
-    echo puredata -nogui -jack $1 > $DIR_HOMEROCK/$PUREDATA
+    echo "puredata -nogui -jack $1" > $DIR_HOMEROCK/$PUREDATA
 }
 
 # BANNER
