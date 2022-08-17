@@ -21,18 +21,18 @@ for service in ${COPY_SERVICES[@]}; do
     cp $service $DIR_SYSTEMD
 done
 
-echo "${NC}"
-
 for file in ${COPY_FILES[@]}; do
     echo -e "\tcopying $file in $DIR_HOMEROCK"
     cp -rv $file $DIR_HOMEROCK
 done
 
+echo "${NC}"
+
 echo
 echo "STARTING & ENABLING SERVICES"
 
 for service in ${SERVICES[@]}; do
-    echo -e "\tstarting/enabling $service"
+    echo -e "${GREEN} \tstarting/enabling $service"
     systemctl start $service
     systemctl enable $service
 done
