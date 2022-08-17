@@ -21,7 +21,7 @@ for service in ${COPY_SERVICES[@]}; do
     cp $service $DIR_SYSTEMD
 done
 
-echo "${NC}"
+echo -e "${NC}"
 
 for file in ${COPY_FILES[@]}; do
     echo -e "\tcopying $file in $DIR_HOMEROCK"
