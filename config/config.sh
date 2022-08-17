@@ -16,7 +16,7 @@ COPY_FILES=( ".jackdrc" ".puredata" )
 SERVICES=( "rotary_client" "rotary_server" "rock_jackd" "rock_puredata")
 FILES=(`ls -C $DIR_PATCH/*.pd`)
 
-length=${#files[@]}
+length=${#FILES[@]}
 counter=1
 
 set_patch() {
