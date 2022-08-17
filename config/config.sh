@@ -26,7 +26,7 @@ for file in ${COPY_FILES[@]}; do
     cp -rv $file $DIR_HOMEROCK
 done
 
-echo "${NC}"
+echo -e "${NC}"
 
 echo
 echo "STARTING & ENABLING SERVICES"
