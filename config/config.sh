@@ -5,6 +5,7 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
 NC='\033[0m'
 
 DIR_SYSTEMD="/etc/systemd/system"
@@ -20,10 +21,12 @@ length=${#FILES[@]}
 counter=1
 
 set_patch() {
-    echo "#!/usr/bin/env bash"
-    echo "puredata -nogui -jack $1"
-    echo "#!/usr/bin/env bash" > $DIR_HOMEROCK/$PUREDATA
-    echo "puredata -nogui -jack $1" > $DIR_HOMEROCK/$PUREDATA
+    echo
+    echo "=== SETTING PATCH ==="
+    echo -e "${GREEN}\tusing following patch: $1"    
+    echo "#!/usr/bin/env bash" > $PUREDATA
+    echo "puredata -nogui -jack $1" >> $PUREDATA
+    echo -e "${NC}"
 }
 
 # BANNER
@@ -36,12 +39,15 @@ sleep 2
 
 # CHOOSE PATCH
 
+echo
+echo "=== SET PATCH TO PLAY ==="
 echo 
 for i in ${FILES[@]}; do 
-    #echo "$counter) $i" 
-    echo "($counter) $(basename $i)"
+    echo -e "${CYAN}\t($counter) $(basename $i)"
     counter=$(( $counter + 1))
 done 
+
+echo -e "${NC}"
 
 control=1
 echo 
@@ -55,9 +61,8 @@ while [[ control -eq 1 ]]; do
         then 
             echo "Index out of range, please retry..."
         else
-            set_patch ${files[$index]}
+            set_patch ${FILES[$index]}
 	    control=0
-            echo OK
     fi 
 done
 
@@ -85,7 +90,7 @@ sleep 1
 
 for service in ${SERVICES[@]}; do
     echo -e "${GREEN} \tstarting/enabling $service"
-    systemctl start $service > /dev/null 2>&1
+    systemctl restart $service > /dev/null 2>&1
     systemctl enable $service > /dev/null 2>&1
 done
 
@@ -95,6 +100,6 @@ echo "=== RUNNING daemon-reload... ==="
 sleep 1
 
 systemctl daemon-reload
-
+echo -e "${GREEN}\tOK${NC}"
 echo
 figlet -c  DONE

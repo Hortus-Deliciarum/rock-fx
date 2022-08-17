@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-
-puredata -nogui -jack /home/rock/Documents/audio_test/rock_audio_test/04_output_mono_test.pd
+puredata -nogui -jack /home/rock/Documents/Hortus-Deliciarum/rock-fx/patches/01.pd
