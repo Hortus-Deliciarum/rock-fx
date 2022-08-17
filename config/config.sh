@@ -53,7 +53,7 @@ while [[ control -eq 1 ]]; do
         then 
             echo "Index out of range, please retry..."
         else
-            #set_patch ${files[$index]}
+            set_patch ${files[$index]}
 	    control=0
             echo OK
     fi 
