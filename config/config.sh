@@ -8,8 +8,8 @@ YELLOW='\033[0;33m'
 NC='\033[0m'
 
 DIR_SYSTEMD="/etc/systemd/system"
-DIR_HOMEROCK="/home/neum"
-DIR_PATCH="$DIR_HOMEROCK/Documenti/Hortus-Deliciarum/rock-fx/patches"
+DIR_HOMEROCK="/home/rock"
+DIR_PATCH="$DIR_HOMEROCK/Documents/Hortus-Deliciarum/rock-fx/patches"
 PUREDATA=".puredata"
 COPY_SERVICES=( "rotary_client.service" "rotary_server.service" "rock_jackd.service" "rock_puredata.service" )
 COPY_FILES=( ".jackdrc" ".puredata" )
@@ -53,8 +53,9 @@ while [[ control -eq 1 ]]; do
         then 
             echo "Index out of range, please retry..."
         else
-            set_patch ${files[$index]}
-            control=0
+            #set_patch ${files[$index]}
+	    control=0
+            echo OK
     fi 
 done
 
