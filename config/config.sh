@@ -12,7 +12,7 @@ DIR_HOMEROCK="/home/rock"
 COPY_SERVICES=( "rotary_client.service" "rotary_server.service" "rock_jackd.service" "rock_puredata.service" )
 COPY_FILES=( ".jackdrc" ".puredata" )
 SERVICES=( "rotary_client" "rotary_server" "rock_jackd" "rock_puredata")
-
+figlet -c "Lem in Rock"
 echo
 echo "=== COPYING SERVICES AND FILES... ==="
 sleep 1
@@ -47,17 +47,4 @@ sleep 1
 systemctl daemon-reload
 
 echo
-echo "                  ,----..             ,--.            \n
-    ,---,        /   /   \          ,--.'|     ,---,. \n
-  .'  .' `\     /   .     :     ,--,:  : |   ,'  .' | \n
-,---.'     \   .   /   ;.  \ ,`--.'`|  ' : ,---.'   | \n
-|   |  .`\  | .   ;   /  ` ; |   :  :  | | |   |   .' \n
-:   : |  '  | ;   |  ; \ ; | :   |   \ | : :   :  |-, \n
-|   ' '  ;  : |   :  | ; | ' |   : '  '; | :   |  ;/| \n
-'   | ;  .  | .   |  ' ' ' : '   ' ;.    ; |   :   .' \n
-|   | :  |  ' '   ;  \; /  | |   | | \   | |   |  |-, \n
-'   : | /  ;   \   \  ',  /  '   : |  ; .' '   :  ;/| \n
-|   | '` ,/     ;   :    /   |   | '`--'   |   |    \ \n
-;   :  .'        \   \ .'    '   : |       |   :   .' \n
-|   ,.'           `---`      ;   |.'       |   | ,'   \n
-'---'                        '---'         `----'     "                                                       
+figlet -c  DONE
