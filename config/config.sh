@@ -14,10 +14,10 @@ COPY_FILES=( ".jackdrc" ".puredata" )
 SERVICES=( "rotary_client" "rotary_server" "rock_jackd" "rock_puredata")
 
 echo
-echo "COPYING FILES..."
+echo "=== COPYING SERVICES AND FILES... ==="
 
 for service in ${COPY_SERVICES[@]}; do
-    echo -e "${YELLOW}\tcopying $service in $DIR_SYSTEMD"
+    echo -e "${GREEN}\tcopying $service in $DIR_SYSTEMD"
     cp $service $DIR_SYSTEMD
 done
 
@@ -29,7 +29,7 @@ done
 echo -e "${NC}"
 
 echo
-echo "STARTING & ENABLING SERVICES"
+echo "=== STARTING & ENABLING SERVICES ==="
 
 for service in ${SERVICES[@]}; do
     echo -e "${GREEN} \tstarting/enabling $service"
@@ -38,7 +38,7 @@ for service in ${SERVICES[@]}; do
 done
 
 echo
-echo "RUNNING daemon-reload..."
+echo "=== RUNNING daemon-reload... ==="
 systemctl daemon-reload
 
 echo
