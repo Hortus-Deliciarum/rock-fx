@@ -42,10 +42,9 @@ echo_debug() {
 set_patch() {
     echo
     echo "=== SETTING PATCH ==="
-    echo_debug "setting following patch: $1"    
+    echo_ok "set following patch: $1"    
     echo "#!/usr/bin/env bash" > $PUREDATA
     echo "puredata -nogui -jack $1" >> $PUREDATA
-    echo_ok "Done"
 }
 
 # BANNER
