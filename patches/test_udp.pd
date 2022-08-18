@@ -15,7 +15,7 @@
 #X obj 113 419 list trim;
 #X msg 260 183 connect 192.168.1.50 10000;
 #X msg 286 305 disconnect;
-#X obj 121 547 print;
+#X obj 53 329 print;
 #X obj 113 337 oscformat test;
 #X connect 0 0 10 0;
 #X connect 1 0 2 0;
@@ -28,6 +28,7 @@
 #X connect 6 1 5 0;
 #X connect 6 2 5 1;
 #X connect 7 0 16 0;
+#X connect 7 0 15 0;
 #X connect 8 0 3 0;
 #X connect 10 0 8 0;
 #X connect 10 1 13 0;
