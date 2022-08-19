@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-puredata -nogui -jack /home/rock/Documents/Hortus-Deliciarum/rock-fx/patches/01.pd
+puredata -nogui -jack /home/rock/Documents/Hortus-Deliciarum/rock-fx/patches/test_udp.pd
