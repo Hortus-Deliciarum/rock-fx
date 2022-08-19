@@ -6,6 +6,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
+GREY='\033[1;30m'
 NC='\033[0m'
 
 DIR_SYSTEMD="/etc/systemd/system"
@@ -20,13 +21,30 @@ FILES=(`ls -C $DIR_PATCH/*.pd`)
 length=${#FILES[@]}
 counter=1
 
+echo_error() {
+    local ERROR
+    ERROR="${NC}[${RED} ERROR ${NC}]"
+    echo -e "${ERROR}${GREY}\t$1${NC}"
+}
+
+echo_ok() {
+    local OK
+    OK="${NC}[${GREEN}  OK   ${NC}]"
+    echo -e "${OK}${GREY}\t$1${NC}"
+}
+
+echo_debug() {
+    local DEBUG 
+    DEBUG="${NC}[${YELLOW} DEBUG ${NC}]"
+    echo -e "${DEBUG}${GREY}\t$1${NC}"
+}
+
 set_patch() {
     echo
     echo "=== SETTING PATCH ==="
-    echo -e "${GREEN}\tusing following patch: $1"    
+    echo_ok "set following patch: $1"    
     echo "#!/usr/bin/env bash" > $PUREDATA
     echo "puredata -nogui -jack $1" >> $PUREDATA
-    echo -e "${NC}"
 }
 
 # BANNER
@@ -42,6 +60,7 @@ sleep 2
 echo
 echo "=== SET PATCH TO PLAY ==="
 echo 
+
 for i in ${FILES[@]}; do 
     echo -e "${CYAN}\t($counter) $(basename $i)"
     counter=$(( $counter + 1))
@@ -59,7 +78,7 @@ while [[ control -eq 1 ]]; do
     
     if [[ $index -gt $(( $length - 1 )) || $index -lt 0 ]]
         then 
-            echo "Index out of range, please retry..."
+            echo_error "Index out of range, please retry..."
         else
             set_patch ${FILES[$index]}
 	    control=0
@@ -73,13 +92,13 @@ echo "=== COPYING SERVICES AND FILES... ==="
 sleep 1
 
 for service in ${COPY_SERVICES[@]}; do
-    echo -e "${GREEN}\tcopying $service in $DIR_SYSTEMD"
     cp $service $DIR_SYSTEMD
+    echo_ok "copied $service in $DIR_SYSTEMD"
 done
 
 for file in ${COPY_FILES[@]}; do
-    echo -e "\tcopying $file in $DIR_HOMEROCK"
     cp $file $DIR_HOMEROCK
+    echo_ok "copied $file in $DIR_HOMEROCK"
 done
 
 echo -e "${NC}"
@@ -89,9 +108,9 @@ echo "=== STARTING & ENABLING SERVICES ==="
 sleep 1
 
 for service in ${SERVICES[@]}; do
-    echo -e "${GREEN} \tstarting/enabling $service"
     systemctl restart $service > /dev/null 2>&1
     systemctl enable $service > /dev/null 2>&1
+    echo_ok "starting/enabling ${service}"
 done
 
 echo -e "${NC}"
@@ -100,6 +119,5 @@ echo "=== RUNNING daemon-reload... ==="
 sleep 1
 
 systemctl daemon-reload
-echo -e "${GREEN}\tOK${NC}"
+echo_ok "Done"
 echo
-figlet -c  DONE
