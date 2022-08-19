@@ -860,30 +860,14 @@
       <colorCode>_5_BAND</colorCode>
       <shape>Standard</shape>
     </diylc.passive.Resistor>
-    <diylc.electromechanical.PinHeader>
-      <name>PH17</name>
-      <alpha>127</alpha>
-      <orientation>DEFAULT</orientation>
-      <controlPoints>
-        <point x="3.3" y="3.9"/>
-        <point x="3.4" y="3.9"/>
-        <point x="3.5" y="3.9"/>
-      </controlPoints>
-      <rowCount>3</rowCount>
-      <columnCount>1</columnCount>
-      <spacing value="0.1" unit="in"/>
-      <shrouded>false</shrouded>
-      <bodyColor hex="808080"/>
-      <shroudColor hex="595959"/>
-    </diylc.electromechanical.PinHeader>
     <diylc.connectivity.HookupWire>
       <name>W13</name>
       <alpha>127</alpha>
       <controlPoints2>
-        <point x="3.9" y="2.5"/>
-        <point x="3.8" y="2.5"/>
-        <point x="3.8" y="3.5"/>
-        <point x="3.9" y="3.5"/>
+        <point x="3.1" y="3.7"/>
+        <point x="3.4" y="3.8"/>
+        <point x="3.8" y="3.9"/>
+        <point x="3.9" y="3.9"/>
       </controlPoints2>
       <color hex="0066cc"/>
       <pointCount>FOUR</pointCount>
@@ -898,10 +882,10 @@
       <name>W14</name>
       <alpha>127</alpha>
       <controlPoints2>
-        <point x="4.8" y="2.5"/>
-        <point x="4.7" y="2.5"/>
-        <point x="4.7" y="3.5"/>
-        <point x="4.8" y="3.5"/>
+        <point x="4.8" y="2.7"/>
+        <point x="4.7" y="2.7"/>
+        <point x="4.7" y="3.7"/>
+        <point x="4.8" y="3.7"/>
       </controlPoints2>
       <color hex="0066cc"/>
       <pointCount>FOUR</pointCount>
@@ -916,10 +900,10 @@
       <name>W15</name>
       <alpha>127</alpha>
       <controlPoints2>
-        <point x="5.7" y="2.5"/>
-        <point x="5.6" y="2.5"/>
-        <point x="5.6" y="3.5"/>
-        <point x="5.7" y="3.5"/>
+        <point x="5.7" y="2.7"/>
+        <point x="5.6" y="2.7"/>
+        <point x="5.6" y="3.7"/>
+        <point x="5.7" y="3.7"/>
       </controlPoints2>
       <color hex="0066cc"/>
       <pointCount>FOUR</pointCount>
@@ -934,10 +918,10 @@
       <name>W16</name>
       <alpha>127</alpha>
       <controlPoints2>
-        <point x="4.1" y="4.5"/>
-        <point x="4.3" y="4.5"/>
-        <point x="4.3" y="5.5"/>
-        <point x="4.1" y="5.5"/>
+        <point x="4.1" y="4.2"/>
+        <point x="3.9" y="4.1"/>
+        <point x="3.8" y="4.0"/>
+        <point x="3.1" y="3.8"/>
       </controlPoints2>
       <color hex="ffff00"/>
       <pointCount>FOUR</pointCount>
@@ -988,10 +972,10 @@
       <name>W19</name>
       <alpha>127</alpha>
       <controlPoints2>
-        <point x="4.1" y="2.5"/>
-        <point x="4.2" y="2.5"/>
-        <point x="4.2" y="3.5"/>
-        <point x="4.1" y="3.5"/>
+        <point x="3.1" y="3.5"/>
+        <point x="3.4" y="3.8"/>
+        <point x="3.7" y="3.8"/>
+        <point x="4.1" y="3.9"/>
       </controlPoints2>
       <color hex="00cc33"/>
       <pointCount>FOUR</pointCount>
@@ -1006,10 +990,10 @@
       <name>W20</name>
       <alpha>127</alpha>
       <controlPoints2>
-        <point x="5.0" y="2.5"/>
-        <point x="5.1" y="2.5"/>
-        <point x="5.1" y="3.5"/>
-        <point x="5.0" y="3.5"/>
+        <point x="5.0" y="2.7"/>
+        <point x="5.1" y="2.7"/>
+        <point x="5.1" y="3.7"/>
+        <point x="5.0" y="3.7"/>
       </controlPoints2>
       <color hex="00cc33"/>
       <pointCount>FOUR</pointCount>
@@ -1024,10 +1008,10 @@
       <name>W21</name>
       <alpha>127</alpha>
       <controlPoints2>
-        <point x="5.9" y="2.5"/>
-        <point x="6.0" y="2.5"/>
-        <point x="6.0" y="3.6"/>
-        <point x="5.9" y="3.6"/>
+        <point x="5.9" y="2.7"/>
+        <point x="6.0" y="2.7"/>
+        <point x="6.0" y="3.7"/>
+        <point x="5.9" y="3.7"/>
       </controlPoints2>
       <color hex="00cc33"/>
       <pointCount>FOUR</pointCount>
