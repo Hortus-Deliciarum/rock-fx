@@ -513,8 +513,8 @@
       <width value="0.125" unit="in"/>
       <points>
         <point x="5.9" y="3.2"/>
-        <point x="5.9" y="3.5"/>
-        <point x="5.9" y="3.35"/>
+        <point x="5.9" y="3.6"/>
+        <point x="5.9" y="3.4"/>
       </points>
       <bodyColor hex="82cffd"/>
       <borderColor hex="5b90b1"/>
@@ -536,8 +536,8 @@
       <width value="0.125" unit="in"/>
       <points>
         <point x="7.8" y="3.2"/>
-        <point x="7.8" y="3.5"/>
-        <point x="7.8" y="3.35"/>
+        <point x="7.8" y="3.6"/>
+        <point x="7.8" y="3.4"/>
       </points>
       <bodyColor hex="82cffd"/>
       <borderColor hex="5b90b1"/>
@@ -559,8 +559,8 @@
       <width value="0.125" unit="in"/>
       <points>
         <point x="7.6" y="3.2"/>
-        <point x="7.6" y="3.5"/>
-        <point x="7.6" y="3.35"/>
+        <point x="7.6" y="3.6"/>
+        <point x="7.6" y="3.4"/>
       </points>
       <bodyColor hex="82cffd"/>
       <borderColor hex="5b90b1"/>
@@ -798,8 +798,8 @@
       <width value="0.125" unit="in"/>
       <points>
         <point x="8.7" y="3.2"/>
-        <point x="8.7" y="3.5"/>
-        <point x="8.7" y="3.35"/>
+        <point x="8.7" y="3.6"/>
+        <point x="8.7" y="3.4"/>
       </points>
       <bodyColor hex="82cffd"/>
       <borderColor hex="5b90b1"/>
@@ -883,9 +883,9 @@
       <alpha>127</alpha>
       <controlPoints2>
         <point x="4.8" y="2.7"/>
-        <point x="4.7" y="2.7"/>
-        <point x="4.7" y="3.7"/>
-        <point x="4.8" y="3.7"/>
+        <point x="4.6" y="2.7"/>
+        <point x="4.6" y="3.7"/>
+        <point x="4.8" y="3.9"/>
       </controlPoints2>
       <color hex="0066cc"/>
       <pointCount>FOUR</pointCount>
@@ -936,7 +936,7 @@
       <name>W17</name>
       <alpha>127</alpha>
       <controlPoints2>
-        <point x="5.0" y="4.5"/>
+        <point x="5.0" y="4.2"/>
         <point x="5.3" y="4.5"/>
         <point x="5.3" y="5.5"/>
         <point x="5.0" y="5.5"/>
@@ -991,9 +991,9 @@
       <alpha>127</alpha>
       <controlPoints2>
         <point x="5.0" y="2.7"/>
-        <point x="5.1" y="2.7"/>
-        <point x="5.1" y="3.7"/>
-        <point x="5.0" y="3.7"/>
+        <point x="5.2" y="2.7"/>
+        <point x="5.2" y="3.7"/>
+        <point x="5.0" y="3.9"/>
       </controlPoints2>
       <color hex="00cc33"/>
       <pointCount>FOUR</pointCount>
