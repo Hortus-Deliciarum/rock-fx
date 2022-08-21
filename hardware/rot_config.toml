@@ -28,7 +28,7 @@ OUT_PORT = 7000
 
 [buttons]
     [buttons.b0]
-        PIN = 19
+        PIN = 12
         ADDRESS = "/button_0"
 
 [i2c]
