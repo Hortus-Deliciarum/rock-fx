@@ -23,7 +23,7 @@ OUT_PORT = 7000
         PINS = [39, 41]
         ADDRESS = "/rotary_4"
     [encoders.e5]
-        PINS = [40, 42]
+        PINS = [42, 40]
         ADDRESS = "/rotary_5"
 
 [buttons]
