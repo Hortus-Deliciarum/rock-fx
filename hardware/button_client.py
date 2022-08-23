@@ -54,8 +54,8 @@ class But:
                 DEBUG, f"button number: {self.idx}\t{self.address}: {1 - value}")
             sender_func(self.address, 1 - value)
             return value
-        else:
-            return None
+
+        return None
 
 
 if __name__ == '__main__':
