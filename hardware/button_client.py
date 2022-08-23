@@ -48,9 +48,30 @@ def button_config(pin):
     return button
 
 
+class But:
+    PRESSED = 0
+    RELEASED = 1
+
+    def __init__(self, pin, address):
+        self.button = mraa.Gpio(pin)
+        self.button.dir(mraa.DIR_IN)
+        self.address = address
+        self.last = RELEASED
+
+    def update(self):
+        value = self.button.read()
+        if value != self.last:
+            self.last = value
+            return value
+        else:
+            return None
+
+
 if __name__ == '__main__':
     init_config()
-    BUTTONS_DATA = [(button_config(but['PIN']), but['ADDRESS'])
-                    for but in BUTTONS]
-    print(BUTTONS_DATA)
-    pause()
+    # BUTTONS_DATA = [(button_config(but['PIN']), but['ADDRESS'])
+    #                for but in BUTTONS]
+    buttons = [But(but['PIN'], but['ADDRESS']) for but in BUTTONS]
+
+    while True:
+        list(map(lambda x: x.update(), buttons))
