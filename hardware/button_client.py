@@ -58,11 +58,12 @@ class But:
         self.address = address
         self.last = RELEASED
 
-    def update(self):
+    def update(self, sender_func):
         value = self.button.read()
         if value != self.last:
             self.last = value
-            debug(DEBUG, f"{value}")
+            debug(DEBUG, f"{self.address}: {1 - value}")
+            sender_func(self.address, 1 - value)
             return value
         else:
             return None
@@ -70,9 +71,9 @@ class But:
 
 if __name__ == '__main__':
     init_config()
-    # BUTTONS_DATA = [(button_config(but['PIN']), but['ADDRESS'])
-    #                for but in BUTTONS]
+    client = udp_client.SimpleUDPClient(IP, OUT_PORT)
+
     buttons = [But(but['PIN'], but['ADDRESS']) for but in BUTTONS]
 
     while True:
-        list(map(lambda x: x.update(), buttons))
+        list(map(lambda x: x.update(client.send_message), buttons))
