@@ -11,6 +11,8 @@ DEBUG = None
 IP = None
 OUT_PORT = None
 BUTTONS = None
+BUTTONS_DATA = None
+CLIENT = None
 MAINPATH = Path(__file__).parent.absolute()
 CONFIG_PATH = MAINPATH / Path('rot_config.toml')
 PRESSED = 0
@@ -27,10 +29,10 @@ def init_config():
     IP = data['network']['IP']
     OUT_PORT = data['network']['OUT_PORT']
     BUTTONS = [data['buttons'][but] for but in data['buttons']]
+    CLIENT = udp_client.SimpleUDPClient(IP, OUT_PORT)
 
 
 def button_isr_routine(gpio):
-    #debug(f"button value {gpio.read()}")
     if gpio.read() == PRESSED:
         debug(DEBUG, "PRESSED")
     else:
@@ -47,6 +49,7 @@ def button_config(pin):
 
 if __name__ == '__main__':
     init_config()
-    #client = udp_client.SimpleUDPClient(IP, OUT_PORT)
-    buttons = [button_config(but['PIN']) for but in BUTTONS]
+    BUTTONS_DATA = [(button_config(but['PIN']), but['ADDRESS'])
+                    for but in BUTTONS]
+    print(BUTTONS_DATA)
     pause()
