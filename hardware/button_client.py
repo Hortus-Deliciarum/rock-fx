@@ -37,6 +37,7 @@ def button_isr_routine(gpio):
         debug(DEBUG, "PRESSED")
     else:
         debug(DEBUG, "RELEASED")
+    print(dir(gpio))
 
 
 def button_config(pin):
