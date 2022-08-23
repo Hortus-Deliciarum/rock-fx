@@ -13,9 +13,9 @@ DIR_SYSTEMD="/etc/systemd/system"
 DIR_HOMEROCK="/home/rock"
 DIR_PATCH="$DIR_HOMEROCK/Documents/Hortus-Deliciarum/rock-fx/patches"
 PUREDATA=".puredata"
-COPY_SERVICES=( "rotary_client.service" "rotary_server.service" "rock_jackd.service" "rock_puredata.service" )
+COPY_SERVICES=( "rock_encoder_client.service" "rock_encoder_server.service" "rock_button_client" "rock_jackd.service" "rock_puredata.service" )
 COPY_FILES=( ".jackdrc" ".puredata" )
-SERVICES=( "rotary_client" "rotary_server" "rock_jackd" "rock_puredata")
+SERVICES=( "rock_encoder_client" "rock_encoder_server" "rock_button_client" "rock_jackd" "rock_puredata")
 FILES=(`ls -C $DIR_PATCH/*.pd`)
 
 length=${#FILES[@]}
