@@ -5,7 +5,7 @@ from signal import pause
 import mraa
 import toml
 from pythonosc import udp_client
-from colorama import Fore
+from debugs import debug
 
 DEBUG = None
 IP = None
@@ -16,9 +16,6 @@ CONFIG_PATH = MAINPATH / Path('rot_config.toml')
 PRESSED = 0
 RELEASED = 1
 
-class Antani:
-    def __init__(self):
-        pass
 
 def init_config():
     global IP, OUT_PORT, BUTTONS, DEBUG
@@ -32,26 +29,18 @@ def init_config():
     BUTTONS = [data['buttons'][but] for but in data['buttons']]
 
 
-def debug(txt):
-    """debug printing"""
-    if DEBUG:
-        print(Fore.YELLOW + txt + Fore.WHITE)
-
-
 def button_isr_routine(gpio):
     #debug(f"button value {gpio.read()}")
-    """
     if gpio.read() == PRESSED:
-        print("PRESSED")
+        debug(DEBUG, "PRESSED")
     else:
-        print("RELEASED")
-    """
-    print(gpio)
+        debug(DEBUG, "RELEASED")
+
 
 def button_config(pin):
     button = mraa.Gpio(pin)
     button.dir(mraa.DIR_IN)
-    #button.mode(mraa.MODE_PULLUP)
+    # button.mode(mraa.MODE_PULLUP)
     button.isr(mraa.EDGE_BOTH, button_isr_routine, button)
     return button
 

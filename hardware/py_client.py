@@ -5,7 +5,7 @@ import toml
 import rotary_encoder as renc
 from pythonosc import udp_client
 from pathlib import Path
-from colorama import Fore
+from debugs import debug
 
 
 DEBUG = None
@@ -27,12 +27,6 @@ def init_config():
     OUT_PORT = data['network']['OUT_PORT']
     ENCODERS = [data['encoders'][enc] for enc in data['encoders']]
     print(DEBUG, IP, type(IP), OUT_PORT, type(OUT_PORT), ENCODERS)
-
-
-def debug(txt):
-    """debug printing"""
-    if DEBUG:
-        print(Fore.BLUE + txt + Fore.WHITE)
 
 
 def isr_routine(encoder):
@@ -66,7 +60,7 @@ class Encoder:
 
         if self.pos != new_pos:
             direction = int(self.rot.get_direction())
-            debug(f"{self.address}, pos: {new_pos}\tdir: {direction}")
+            debug(DEBUG, f"{self.address}, pos: {new_pos}\tdir: {direction}")
             sender_func(self.address, direction)
             self.pos = new_pos
 
