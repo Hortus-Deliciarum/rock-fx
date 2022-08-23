@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
-from signal import pause
 import mraa
 import toml
 from pythonosc import udp_client
