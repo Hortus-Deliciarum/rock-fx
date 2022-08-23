@@ -1,11 +1,11 @@
 [Unit]
-Description=rotary service
+Description=rock encoder server service
 StartLimitIntervalSec=0
 
 [Service]
 Type=oneshot
 User=root
-ExecStart=/home/rock/Documents/Hortus-Deliciarum/rock-fx/hardware/py_server.py
+ExecStart=/home/rock/Documents/Hortus-Deliciarum/rock-fx/hardware/rock_encoder_server.py
 Type=idle
 
 [Install]
