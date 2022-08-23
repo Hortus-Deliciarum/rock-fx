@@ -28,8 +28,23 @@ OUT_PORT = 7000
 
 [buttons]
     [buttons.b0]
-        PIN = 12
+        PIN = 7
         ADDRESS = "/button_0"
+    [buttons.b1]
+        PIN = 12
+        ADDRESS = "/button_1"
+    [buttons.b2]
+        PIN = 23
+        ADDRESS = "/button_2"
+    [buttons.b3]
+        PIN = 24
+        ADDRESS = "/button_3"
+    [buttons.b4]
+        PIN = 43
+        ADDRESS = "/button_4"
+    [buttons.b5]
+        PIN = 44
+        ADDRESS = "/button_5"
 
 [i2c]
 CLK = 13
