@@ -62,6 +62,7 @@ class But:
         value = self.button.read()
         if value != self.last:
             self.last = value
+            debug(DEBUG, f"{value}")
             return value
         else:
             return None
