@@ -1,4 +1,6 @@
-# Configurazione rockpis
+# Configurazione rockpis/esp32
+
+## Preparazione
 
 Nel file /boot/uEnv.txt attivare la porta seriale `uart1` in corrispondenza della chiave `overlays`:
 
@@ -14,10 +16,18 @@ Ottenere la lista delle porte seriali con il comando:
 sudo mraa-uart list
 ```
 
-E annotare l'indice e il *path* della seriale appena attivata. Impostare la velocità di trasmissione con il seguente comando:
+E annotare l'indice e il *path* della seriale appena attivata.  
+Impostare la velocità di trasmissione con il seguente comando:
 
 ```bash
 sudo mraa-uart dev device baud 115200
 ```
 
-dove device è l'indice della seriale (di solito **1**)
+dove *device* è l'indice della seriale (di solito **1**)
+
+## Collegamenti fisici
+
+| esp32 pin  | rockpis pin |
+| ---------- | ----------- |
+| 16 (RXD 2) | 24 (TX1)    |
+| 17 (TXD 2) | 23 (RX1)    |
