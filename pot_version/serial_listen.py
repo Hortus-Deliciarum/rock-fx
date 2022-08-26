@@ -3,7 +3,7 @@
 import serial
 from pythonosc import udp_client
 
-ser = serial.Serial('/dev/ttyUSB0', 115200)  # Start serial communication
+ser = serial.Serial('/dev/ttyS1', 115200)  # Start serial communication
 
 
 def parse_msg(msg):
@@ -18,7 +18,7 @@ def parse_msg(msg):
             datatyped = float(datum.strip(None))
         except ValueError:
             datatyped = datum
-
+    print(address, datatyped)
     return (address, datatyped)
 
 
