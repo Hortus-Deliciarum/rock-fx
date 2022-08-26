@@ -17,13 +17,6 @@ sudo mraa-uart list
 ```
 
 E annotare l'indice e il *path* della seriale appena attivata.  
-Impostare la velocità di trasmissione con il seguente comando:
-
-```bash
-sudo mraa-uart dev device baud 115200
-```
-
-dove *device* è l'indice della seriale (di solito **1**)
 
 ## Collegamenti fisici
 

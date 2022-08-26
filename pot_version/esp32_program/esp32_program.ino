@@ -1,9 +1,12 @@
 // include the ResponsiveAnalogRead library
 #include <ResponsiveAnalogRead.h>
 #include <Button2.h>
+#include <HardwareSerial.h>
 
 #define N_POTS    3
 #define N_BUTTONS 3
+#define RX        16
+#define TX        17
 
 // define the pin you want to use
 const int POT_PIN[] = { 35, 32, 33 };
@@ -13,6 +16,7 @@ const int BUTTON_PIN[] = { 12, 14, 27 };
 //ResponsiveAnalogRead analog(ANALOG_PIN, true);
 ResponsiveAnalogRead *analog[N_POTS];
 Button2 *button[N_BUTTONS];
+HardwareSerial SerialPort(2);
 
 
 // the next optional argument is snapMultiplier, which is set to 0.01 by default
@@ -21,7 +25,8 @@ Button2 *button[N_BUTTONS];
 // but doing so may cause more noise to seep through if sleep is not enabled
 
 void setup() {
-  Serial.begin(115200);
+  //Serial.begin(115200);
+  SerialPort.begin(115200, SERIAL_8N1, RX, TX);
 
   for (int i=0; i < N_POTS; i++) {
     analog[i] = new ResponsiveAnalogRead(POT_PIN[i], true);
@@ -48,10 +53,10 @@ void loop() {
     if(analog[i]->hasChanged()) {
     
       float value = (float)(analog[i]->getValue() >> 2);
-      Serial.print("/pot_");
-      Serial.print(i);
-      Serial.print(" ");
-      Serial.println(value / 1024);
+      SerialPort.print("/pot_");
+      SerialPort.print(i);
+      SerialPort.print(" ");
+      SerialPort.println(value / 1024);
     } 
   }
   
@@ -87,8 +92,8 @@ void released(Button2& btn) {
 }
 
 void send_msg(int n_button, int value) {
-    Serial.print("/button_");
-    Serial.print(n_button);
-    Serial.print(" ");
-    Serial.println(value);  
+    SerialPort.print("/button_");
+    SerialPort.print(n_button);
+    SerialPort.print(" ");
+    SerialPort.println(value);  
 }
