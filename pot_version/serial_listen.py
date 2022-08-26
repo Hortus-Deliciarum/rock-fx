@@ -7,19 +7,19 @@ ser = serial.Serial('/dev/ttyUSB0', 115200)  # Start serial communication
 
 
 def parse_msg(msg):
+    """parse serial message"""
     address, datum = msg.split(' ')[:2]
     datatyped = None
 
     try:
         datatyped = int(datum.strip(None))
-    except:
+    except ValueError:
         try:
             datatyped = float(datum.strip(None))
-        except:
+        except ValueError:
             datatyped = datum
 
-    finally:
-        return (address, datatyped)
+    return (address, datatyped)
 
 
 if __name__ == '__main__':
