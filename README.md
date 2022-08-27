@@ -1,4 +1,4 @@
-# rock-rot
+# rot-rock
 
 ## dependencies
 
