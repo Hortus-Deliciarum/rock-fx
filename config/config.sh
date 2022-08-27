@@ -11,7 +11,7 @@ NC='\033[0m'
 
 DIR_SYSTEMD="/etc/systemd/system"
 DIR_HOMEROCK="/home/rock"
-DIR_PATCH="$DIR_HOMEROCK/Documents/Hortus-Deliciarum/rock-fx/patches"
+DIR_PATCH="$DIR_HOMEROCK/Documents/Hortus-Deliciarum/rot-rock/patches"
 PUREDATA=".puredata"
 COPY_SERVICES=( "rock_encoder_client.service" "rock_encoder_server.service" "rock_button_client.service" "rock_jackd.service" "rock_puredata.service" )
 COPY_FILES=( ".jackdrc" ".puredata" )
