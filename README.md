@@ -1,4 +1,4 @@
-# rock-fx
+# rock-rot
 
 ## dependencies
 
