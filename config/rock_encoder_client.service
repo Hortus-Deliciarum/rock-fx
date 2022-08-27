@@ -5,7 +5,7 @@ StartLimitIntervalSec=0
 [Service]
 Type=oneshot
 User=root
-ExecStart=/home/rock/Documents/Hortus-Deliciarum/rock-fx/core/rock_encoder_client.py
+ExecStart=/home/rock/Documents/Hortus-Deliciarum/rot-rock/core/rock_encoder_client.py
 Type=idle
 
 [Install]
