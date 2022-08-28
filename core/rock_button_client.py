@@ -22,7 +22,7 @@ def init_config():
     """config global labels"""
     global IP, OUT_PORT, BUTTONS, DEBUG
 
-    with open(CONFIG_PATH, 'r') as c_file:
+    with open(CONFIG_PATH, 'r', encoding='utf-8') as c_file:
         data = toml.load(c_file)
 
     DEBUG = data['debug']['DEBUG']
