@@ -1,0 +1,26 @@
+#N canvas 4 62 1364 595 16;
+#X obj 398 56 oscparse;
+#X obj 398 91 list trim;
+#X obj 411 125 print incoming;
+#X obj 398 23 netreceive -b -u 47000;
+#X obj 398 164 route rotary_0 rotary_1 rotary_2;
+#X text 643 138 VOLUME;
+#X obj 274 185 adc~ 1;
+#X obj 276 371 dac~ 1;
+#X obj 383 312 sigmund~;
+#X obj 221 237 sigmund~ -npts 16384 -hop 8192 -npeak 1 tracks;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 36 32 graph;
+#X obj 746 284 soundfiler;
+#X msg 745 255 read -resize ./open-string.wav array1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 4 0;
+#X connect 3 0 0 0;
+#X connect 12 0 11 0;
