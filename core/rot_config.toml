@@ -17,10 +17,10 @@ OUT_PORT = 47000
         PINS = [19, 21]
         ADDRESS = "/rotary_2"
     [encoders.e3]
-        PINS = [22, 18]
+        PINS = [18, 22]
         ADDRESS = "/rotary_3"
     [encoders.e4]
-        PINS = [41, 39]
+        PINS = [39, 41]
         ADDRESS = "/rotary_4"
     [encoders.e5]
         PINS = [42, 40]
